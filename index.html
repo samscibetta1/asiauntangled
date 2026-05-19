@@ -1724,6 +1724,15 @@ html, body {
       <div id="innovent-deep-content"></div>
     </div>
 
+    <!-- DEFINITIONS / GLOSSARY -->
+    <div class="view" id="view-definitions">
+      <header class="page-header">
+        <h1 class="page-title">Definitions · <em>episode 1 vocabulary</em></h1>
+        <p class="page-desc">Key terms that recur throughout the audio episode and the Innovent dossier — the vocabulary of Chinese biotech, drug modalities, and clinical regulation. Skim before you listen, or come back as needed.</p>
+      </header>
+      <div id="definitions-content"></div>
+    </div>
+
     <!-- ABOUT -->
     <div class="view" id="view-about">
       <header class="page-header">
@@ -3519,8 +3528,12 @@ function renderInnoventDeep() {
   // ===================== Build HTML =====================
   let h = '';
 
-  // ----- Executive summary header -----
-  h += '<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px;">';
+  // ----- COMPANY SNAPSHOT · the four orientation boxes -----
+  // Moved to the very top so readers get at-a-glance company orientation before the marquee Takeda graphic.
+
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 14px; font-weight: 500;">Company at a glance</div>';
+
+  h += '<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px;">';
   h += '<div style="padding: 18px 20px; background: var(--paper-warm); border: 1px solid var(--line); border-top: 3px solid #7b5ba0; border-radius: 4px;">';
   h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">Founded</div>';
   h += '<div style="font-family: var(--serif); font-size: 28px; color: #7b5ba0;">2011</div>';
@@ -3545,6 +3558,281 @@ function renderInnoventDeep() {
   h += '<div style="font-family: var(--mono); font-size: 11px; color: var(--ink-faint); margin-top: 6px;">Includes Takeda $11.4B + Lilly $8.85B + Roche $1B+</div>';
   h += '</div>';
   h += '</div>';
+
+  // ----- HEADLINE GRAPHIC: The Takeda Deal Anatomy -----
+  // The single graphic the entire episode hangs on. Placed at the very top of the dossier.
+  h += '<div style="background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%); border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 32px 36px 36px; margin-bottom: 40px; position: relative;">';
+
+  // Eyebrow + headline
+  h += '<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 8px;">';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 500;">22 October 2025 · The deal that changed the math</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em;">Takeda × Innovent</div>';
+  h += '</div>';
+  h += '<h2 style="font-family: var(--display); font-weight: 400; font-size: 32px; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-bottom: 6px;">The largest <em style="font-style: italic; color: var(--accent);">Chinese biotech</em> deal ever signed</h2>';
+  h += '<p style="font-size: 13px; color: var(--ink-light); max-width: 720px; line-height: 1.6; margin-bottom: 28px;">Three molecules. One Co-Co structure. And the first time a Western pharma wrote a billion-dollar upfront cheque to a Chinese biotech — at a 20% equity premium on top of it.</p>';
+
+  // ----- Big $11.4B figure with the three deal components -----
+  h += '<div style="display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: center; padding-bottom: 28px; border-bottom: 1px dashed var(--line);">';
+
+  // Left: the headline number
+  h += '<div style="text-align: left;">';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Total deal value</div>';
+  h += '<div style="font-family: var(--display); font-weight: 400; font-size: 72px; line-height: 1; color: var(--accent); letter-spacing: -0.03em;">$11.4<span style="font-size: 36px; vertical-align: top; margin-left: 2px;">B</span></div>';
+  h += '<div style="font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 10px; line-height: 1.5;"><strong style="color: var(--accent);">2.4×</strong> the Hengrui–GSK upfront<br><span style="color: var(--ink-faint);">signed three months earlier</span></div>';
+  h += '</div>';
+
+  // Right: stacked bar broken into the three deal components
+  h += '<div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Broken into three components</div>';
+
+  // Stacked horizontal bar — proportional to dollar amounts
+  // $1.2B upfront = 10.5%, $100m equity = 0.9%, $10.2B milestones = 89.5% (clipped visually for readability)
+  // Visually we'll weight them more evenly than literal proportion for legibility — but use proportional caps
+  h += '<div style="display: flex; height: 44px; width: 100%; border-radius: 3px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,36,54,0.08); margin-bottom: 14px;">';
+  h += '<div style="flex: 0 0 14%; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.04em;">$1.2B</div>';
+  h += '<div style="flex: 0 0 3%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--mono); font-size: 9px; font-weight: 600;">$0.1B</div>';
+  h += '<div style="flex: 1; background: repeating-linear-gradient(90deg, #c46a3a 0px, #c46a3a 8px, #b25a2f 8px, #b25a2f 16px); display: flex; align-items: center; justify-content: center; color: white; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.04em;">$10.2B</div>';
+  h += '</div>';
+
+  // Three labels beneath
+  h += '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">';
+
+  h += '<div style="border-left: 2px solid var(--accent); padding-left: 10px;">';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 3px;">Cash upfront</div>';
+  h += '<div style="font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1.1;">$1.2B</div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); margin-top: 4px; line-height: 1.4;">First-ever <strong>billion-dollar upfront</strong> from any Western pharma to a Chinese biotech.</div>';
+  h += '</div>';
+
+  h += '<div style="border-left: 2px solid var(--accent-soft); padding-left: 10px;">';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--accent-soft); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 3px;">Direct equity</div>';
+  h += '<div style="font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1.1;">$100M</div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); margin-top: 4px; line-height: 1.4;">Fresh shares at <strong style="color: var(--gain);">+20% premium</strong> to market. Skin in the game, not just a license.</div>';
+  h += '</div>';
+
+  h += '<div style="border-left: 2px solid #c46a3a; padding-left: 10px;">';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: #b25a2f; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 3px;">Milestones</div>';
+  h += '<div style="font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--ink); line-height: 1.1;">up to $10.2B</div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); margin-top: 4px; line-height: 1.4;">Development, regulatory, and sales triggers across three molecules and multiple geographies.</div>';
+  h += '</div>';
+
+  h += '</div>';
+  h += '</div>';
+  h += '</div>';
+
+  // ----- Three molecules row -----
+  h += '<div style="padding-top: 24px;">';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;">What Takeda is buying · three molecules at three stages</div>';
+
+  h += '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">';
+
+  // IBI363 - the showpiece
+  h += '<div style="padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--accent); position: relative;">';
+  h += '<div style="position: absolute; top: -1px; right: -1px; background: var(--accent); color: white; font-family: var(--mono); font-size: 8px; padding: 3px 7px; letter-spacing: 0.08em; font-weight: 600;">THE SHOWPIECE</div>';
+  h += '<div style="font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">IBI363</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--accent); margin-bottom: 10px; letter-spacing: 0.04em;">PHASE 3 · BISPECIFIC</div>';
+  h += '<div style="font-size: 11.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 10px;"><strong style="color: var(--ink);">PD-1 / IL-2α-bias bispecific antibody.</strong> Grabs the tumor with one arm and an immune-cell gas pedal with the other — a holy-grail design if it works.</div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-faint); padding-top: 8px; border-top: 1px solid var(--line-soft); line-height: 1.4;">In-house Innovent discovery</div>';
+  h += '</div>';
+
+  // IBI343
+  h += '<div style="padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--accent-soft);">';
+  h += '<div style="font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">IBI343</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--accent-soft); margin-bottom: 10px; letter-spacing: 0.04em;">PHASE 3 · ADC</div>';
+  h += '<div style="font-size: 11.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 10px;"><strong style="color: var(--ink);">CLDN18.2 antibody-drug conjugate.</strong> Smart-bomb design against gastric cancer; same target as Astellas\'s approved Vyloy — a paved commercial road.</div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-faint); padding-top: 8px; border-top: 1px solid var(--line-soft); line-height: 1.4;">In-house Innovent discovery</div>';
+  h += '</div>';
+
+  // IBI3001
+  h += '<div style="padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid #c46a3a;">';
+  h += '<div style="font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">IBI3001</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: #b25a2f; margin-bottom: 10px; letter-spacing: 0.04em;">PHASE 1 · OPTION</div>';
+  h += '<div style="font-size: 11.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 10px;"><strong style="color: var(--ink);">EGFR / B7H3 bispecific ADC.</strong> Optioned, not yet exercised — Takeda buys the right to take this one global later if early data holds.</div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-faint); padding-top: 8px; border-top: 1px solid var(--line-soft); line-height: 1.4;">Early-stage Innovent platform</div>';
+  h += '</div>';
+
+  h += '</div>'; // /molecules grid
+
+  // ----- The structural punchline -----
+  h += '<div style="margin-top: 22px; padding: 18px 22px; background: var(--ink); color: var(--paper); border-radius: 3px; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;">';
+  h += '<div style="text-align: center; padding-right: 20px; border-right: 1px solid rgba(250,245,238,0.18);">';
+  h += '<div style="font-family: var(--display); font-size: 36px; font-weight: 400; color: var(--paper); letter-spacing: -0.02em; line-height: 1;">40<span style="color: var(--accent-soft); font-size: 22px; vertical-align: middle;">/</span>60</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: rgba(250,245,238,0.6); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px;">US profit-share</div>';
+  h += '</div>';
+  h += '<div style="font-size: 12.5px; line-height: 1.6; color: rgba(250,245,238,0.92);">';
+  h += '<strong style="font-family: var(--display); font-size: 16px; font-weight: 500; color: var(--paper); display: block; margin-bottom: 4px;">The Genentech-style seat at the table</strong>';
+  h += 'Innovent kept <strong style="color: var(--accent-soft);">40% of US profits on IBI363</strong> — a Co-Co structure, not a clean license-out. In 95%+ of China-to-West deals, the Chinese biotech accepts pure ex-Greater-China licensing for milestones only. <strong style="color: var(--paper);">Here, Innovent participates directly in US sales economics on its lead asset.</strong> This is the single most important detail of the deal.';
+  h += '</div>';
+  h += '</div>';
+
+  h += '</div>'; // /three molecules row + structural
+  h += '</div>'; // /headline graphic container
+
+  // ----- HEADLINE GRAPHIC #2: Yu Dechao's life arc -----
+  // The human throughline. Answers the implicit question: who is the man behind the Takeda deal?
+  // 11 inflection points across 62 years, with the founding of Innovent at age 47 as the pivot.
+
+  h += '<div style="background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 32px 36px 36px; margin-bottom: 40px; position: relative;">';
+
+  // Eyebrow + headline
+  h += '<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 8px;">';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 500;">The arc that led here · 62 years, 11 inflection points</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em;">Yu Dechao · b. 1964</div>';
+  h += '</div>';
+  h += '<h2 style="font-family: var(--display); font-weight: 400; font-size: 30px; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-bottom: 6px;">From a <em style="font-style: italic;">Tiantai cowherd</em> to founder of an <em style="font-style: italic; color: var(--accent);">$11.4B</em> company</h2>';
+  h += '<p style="font-size: 13px; color: var(--ink-light); max-width: 760px; line-height: 1.6; margin-bottom: 32px;">Yu founded Innovent at 47 — meaning <strong style="color: var(--ink);">three-quarters of his life happened before the company existed</strong>. Eleven inflection points that explain the deal above.</p>';
+
+  // Era labels above the timeline
+  h += '<div style="display: grid; grid-template-columns: 4fr 1.4fr 6fr; gap: 0; margin-bottom: 14px;">';
+  h += '<div style="display: flex; align-items: center; gap: 12px;"><div style="flex: 1; height: 1px; background: var(--line);"></div><div style="font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; color: var(--ink-faint);">47 years of preparation</div><div style="flex: 1; height: 1px; background: var(--line);"></div></div>';
+  h += '<div></div>';
+  h += '<div style="display: flex; align-items: center; gap: 12px;"><div style="flex: 1; height: 1px; background: var(--accent); opacity: 0.5;"></div><div style="font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; color: var(--accent);">15 years of Innovent</div><div style="flex: 1; height: 1px; background: var(--accent); opacity: 0.5;"></div></div>';
+  h += '</div>';
+
+  // Timeline container with connecting line
+  h += '<div style="position: relative;">';
+
+  // Background connecting line — gradient from ink-soft (pre-Innovent) to accent (post-Innovent)
+  // Dots sit at y ≈ 89px (80px age block + 9px = center of 18px dot row)
+  h += '<div style="position: absolute; left: 12px; right: 12px; top: 88px; height: 2px; background: linear-gradient(to right, var(--ink-soft) 0%, var(--ink-soft) 34%, var(--accent) 41%, var(--accent) 100%); pointer-events: none;"></div>';
+
+  // 11-column event grid
+  h += '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1.4fr 1fr 1fr 1fr 1fr 1fr 1fr; gap: 0; position: relative;">';
+
+  // ===== Event 1: Age 18 (1982) — First university =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink-soft); line-height: 1;">18</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-faint); margin-top: 4px;">1982</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink-soft); box-sizing: border-box;"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">First in his village to attend university</div>';
+  h += '</div>';
+
+  // ===== Event 2: Age 29 (1993) — UCSF =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink-soft); line-height: 1;">29</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-faint); margin-top: 4px;">1993</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink-soft); box-sizing: border-box;"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">UCSF postdoc — Genentech\'s home turf</div>';
+  h += '</div>';
+
+  // ===== Event 3: Age 33 (1997) — Mother's cancer =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink-soft); line-height: 1;">33</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-faint); margin-top: 4px;">1997</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink-soft); box-sizing: border-box;"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">Mother\'s cancer — treated with US-only drugs</div>';
+  h += '</div>';
+
+  // ===== Event 4: Age 41 (2005) — Oncorine approved =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink-soft); line-height: 1;">41</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-faint); margin-top: 4px;">2005</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--paper); border: 2px solid var(--ink-soft); box-sizing: border-box;"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">Oncorine approved · Class 1 New Drug #1</div>';
+  h += '</div>';
+
+  // ===== Event 5: Age 47 (2011) — FOUNDS INNOVENT (the pivot) =====
+  h += '<div style="padding: 0 4px; text-align: center; background: linear-gradient(180deg, rgba(179, 74, 47, 0.07) 0%, rgba(179, 74, 47, 0) 100%); border-radius: 4px;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--mono); font-size: 8.5px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">★ The pivot</div>';
+  h += '<div style="font-family: var(--display); font-size: 40px; font-weight: 400; color: var(--accent); line-height: 1;">47</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9.5px; color: var(--accent); margin-top: 4px; font-weight: 600;">2011</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 3;"><div style="width: 16px; height: 16px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--paper-warm), 0 0 0 6px var(--accent);"></div></div>';
+  h += '<div style="font-size: 11px; color: var(--ink); line-height: 1.4; padding-top: 14px; font-weight: 500;">Founds Innovent in Suzhou</div>';
+  h += '</div>';
+
+  // ===== Event 6: Age 51 (2015) — Lilly manufacturing sprint =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1;">51</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-soft); margin-top: 4px;">2015</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--paper-warm);"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">"I am willing to spend 18 months" · Lilly bet</div>';
+  h += '</div>';
+
+  // ===== Event 7: Age 54 (2018) — HKEX IPO + sintilimab =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1;">54</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-soft); margin-top: 4px;">2018</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--paper-warm);"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">HKEX IPO + sintilimab approval, same quarter</div>';
+  h += '</div>';
+
+  // ===== Event 8: Age 58 (2022) — ODAC rejection =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1;">58</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-soft); margin-top: 4px;">2022</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--paper-warm);"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">FDA ODAC votes 14–1 against sintilimab</div>';
+  h += '</div>';
+
+  // ===== Event 9: Age 60 (2024) — Fortvita governance crisis =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1;">60</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--ink-soft); margin-top: 4px;">2024</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--paper-warm);"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">Fortvita governance crisis · averted</div>';
+  h += '</div>';
+
+  // ===== Event 10: Age 61 (2025) — TAKEDA DEAL (emphasized, callback) =====
+  h += '<div style="padding: 0 4px; text-align: center; background: rgba(179, 74, 47, 0.06); border-radius: 4px; position: relative;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 4px;">↑ see above</div>';
+  h += '<div style="font-family: var(--display); font-size: 30px; font-weight: 500; color: var(--accent); line-height: 1;">61</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9.5px; color: var(--accent); margin-top: 4px; font-weight: 600;">2025</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 13px; height: 13px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--paper-warm), 0 0 0 4px var(--accent);"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink); line-height: 1.4; padding-top: 12px; font-weight: 500;">Mazdutide + the <span style="color: var(--accent); font-weight: 600;">$11.4B Takeda deal</span></div>';
+  h += '</div>';
+
+  // ===== Event 11: Age 62 (2026 / today) — First profit =====
+  h += '<div style="padding: 0 4px; text-align: center;">';
+  h += '<div style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px;">';
+  h += '<div style="font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1;">62</div>';
+  h += '<div style="font-family: var(--mono); font-size: 9px; color: var(--accent); margin-top: 4px; font-weight: 600; letter-spacing: 0.08em;">TODAY</div>';
+  h += '</div>';
+  h += '<div style="height: 18px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;"><div style="width: 11px; height: 11px; border-radius: 50%; background: var(--paper-warm); border: 2px dashed var(--accent); box-sizing: border-box;"></div></div>';
+  h += '<div style="font-size: 10.5px; color: var(--ink-soft); line-height: 1.4; padding-top: 12px;">First full-year statutory profit · May 2026</div>';
+  h += '</div>';
+
+  h += '</div>'; // /grid
+  h += '</div>'; // /timeline container
+
+  // ----- Stats summary footer (three big numbers) -----
+  h += '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 36px; padding-top: 24px; border-top: 1px dashed var(--line);">';
+
+  h += '<div style="text-align: left;">';
+  h += '<div style="font-family: var(--display); font-size: 32px; font-weight: 400; color: var(--ink); line-height: 1;">47<span style="font-size: 14px; color: var(--ink-soft); margin-left: 6px; font-family: var(--body);">years</span></div>';
+  h += '<div style="font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.5;">of preparation before the company existed</div>';
+  h += '</div>';
+
+  h += '<div style="text-align: left;">';
+  h += '<div style="font-family: var(--display); font-size: 32px; font-weight: 400; color: var(--ink); line-height: 1;">3<span style="font-size: 14px; color: var(--ink-soft); margin-left: 6px; font-family: var(--body);">Class 1 New Drugs</span></div>';
+  h += '<div style="font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.5;">invented by Yu: Oncorine \'05, Conbercept \'13, Sintilimab \'18</div>';
+  h += '</div>';
+
+  h += '<div style="text-align: left;">';
+  h += '<div style="font-family: var(--display); font-size: 32px; font-weight: 400; color: var(--accent); line-height: 1;">15<span style="font-size: 14px; color: var(--ink-soft); margin-left: 6px; font-family: var(--body);">years</span></div>';
+  h += '<div style="font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.5;">from founding to the <strong style="color: var(--accent);">$11.4B Takeda deal</strong></div>';
+  h += '</div>';
+
+  h += '</div>'; // /stats footer
+  h += '</div>'; // /Yu arc graphic container
 
   // ----- VC FUNDING TIMELINE (pre-IPO 2011-2018) -----
   h += '<h2 class="section-title" style="margin-top: 16px; margin-bottom: 6px;">Pre-IPO funding history · 2011 to 2018</h2>';
@@ -3927,6 +4215,128 @@ function renderInnoventDeep() {
   container.innerHTML = h;
 }
 
+// === Render: Definitions / Glossary ===
+function renderDefinitions() {
+  const container = document.getElementById('definitions-content');
+  if (!container) return;
+
+  let h = '';
+
+  // ----- Opening lede (a paragraph of context above the columns) -----
+  h += '<div style="background: var(--paper-warm); border-left: 3px solid var(--accent); padding: 20px 26px; margin-bottom: 32px; max-width: 880px;">';
+  h += '<div style="font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 8px;">12 terms · 3 categories</div>';
+  h += '<p style="font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin: 0;">Episode 1 traverses three domains a Western listener doesn\'t encounter every day: <strong style="color: var(--ink);">the regulatory architecture</strong> of Chinese pharma (Class 1 drugs, HKEX 18A, NRDL, VBP), <strong style="color: var(--ink);">the molecular biology</strong> behind Innovent\'s pipeline (mAbs, ADCs, bispecifics, GLP-1s, PD-1 inhibitors), and <strong style="color: var(--ink);">the clinical-regulatory machinery</strong> that decides which drugs reach which markets (PFS vs OS, ODAC, Co-Co structures). Each definition below ties back to a specific moment in the episode.</p>';
+  h += '</div>';
+
+  // ----- 3-column category grid -----
+  h += '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; max-width: 1240px;">';
+
+  // ===== Column 1: Business & Regulatory =====
+  h += '<div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding-bottom: 10px; border-bottom: 1.5px solid var(--accent); margin-bottom: 20px;">Business & Regulatory</div>';
+
+  // Class 1 New Drug
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Class 1 New Drug</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">China NMPA classification for a drug containing a <em style="color: var(--ink);">globally novel</em> active ingredient — the highest innovation tier. Distinct from Class 2 (improvements), Class 3–4 (generics of foreign drugs), and Class 5 (imports). Yu Dechao is the only scientist in China to have invented three: Oncorine (2005), Conbercept (2013), Sintilimab (2018).</div>';
+  h += '</div>';
+
+  // HKEX Chapter 18A
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">HKEX Chapter 18A</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">A Hong Kong Stock Exchange listing rule introduced April 2018 that lets <em style="color: var(--ink);">pre-revenue biotechs</em> go public — provided they have at least one drug past Phase 1, a serious investor base, and \u2265 US$190m market cap. Created so HK would stop losing biotech IPOs to Nasdaq. Innovent listed under it six months after the rule existed — a real-time test case for the regime.</div>';
+  h += '</div>';
+
+  // NRDL
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">NRDL</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-bottom: 6px;">National Reimbursement Drug List</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">China\'s master formulary — the catalogue of drugs the public health insurance system pays for. Getting on requires brutal price negotiation; once on, the state covers ~70% of patient cost and volume explodes across 5,000+ hospitals. The single most consequential commercial event for any branded drug in China.</div>';
+  h += '</div>';
+
+  // VBP
+  h += '<div style="margin-bottom: 0;">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">VBP</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-bottom: 6px;">Volume-Based Procurement</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">China\'s centralized bulk-buying program. Procurement agencies negotiate large volume contracts in exchange for steep price cuts (often 70\u201390%). Biosimilars are high-risk for inclusion; novel branded drugs are typically excluded. This is the main NRDL-treadmill risk for Innovent\'s biosimilar revenue.</div>';
+  h += '</div>';
+
+  h += '</div>'; // /col 1
+
+  // ===== Column 2: Drug Modalities =====
+  h += '<div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--accent-soft); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding-bottom: 10px; border-bottom: 1.5px solid var(--accent-soft); margin-bottom: 20px;">Drug Modalities · Science</div>';
+
+  // mAb
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">mAb</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-bottom: 6px;">Monoclonal Antibody</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">Lab-made copies of the Y-shaped proteins your own immune system uses to grab specific targets. Each mAb is engineered to lock onto exactly <em style="color: var(--ink);">one</em> target. A guided molecular missile — and the foundation of modern biologics. Most of Innovent\'s pipeline is built on mAb engineering.</div>';
+  h += '</div>';
+
+  // PD-1
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">PD-1 / Checkpoint Inhibitor</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">Cancer cells hide from the immune system using a "cloak" (PD-L1) that latches onto T-cells\' kill-switch (PD-1). PD-1 inhibitors are mAbs that <em style="color: var(--ink);">physically cover the kill-switch</em> so the cloak fails — the T-cell sees the tumor and attacks. The underlying biology won the 2018 Nobel for Allison and Honjo. Sintilimab, Opdivo, and Keytruda are all PD-1 inhibitors.</div>';
+  h += '</div>';
+
+  // ADC
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">ADC</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-bottom: 6px;">Antibody-Drug Conjugate</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">An antibody bolted to a toxic payload. The antibody is the <em style="color: var(--ink);">guidance system</em> (finds the cancer cell); the payload is the <em style="color: var(--ink);">warhead</em> (kills it). The industry calls them "smart bombs." Innovent\'s IBI343 (CLDN18.2) and IBI3001 (EGFR/B7H3) in the Takeda deal are both ADCs.</div>';
+  h += '</div>';
+
+  // Bispecific
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Bispecific Antibody</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">An antibody engineered to grab <em style="color: var(--ink);">two</em> different targets at once. Picture a molecular handcuff: one end on the tumor, the other pulling an immune cell over. Harder to engineer than a regular mAb; more selective when it works. IBI363 (PD-1 / IL-2\u03b1) is the bispecific anchoring the Takeda deal — one of the most ambitious bispecific designs in late-stage development globally.</div>';
+  h += '</div>';
+
+  // GLP-1 / GIP / GCG
+  h += '<div style="margin-bottom: 0;">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">GLP-1 · GIP · GCG</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">Three gut hormones driving the modern weight-loss drug class. <strong style="color: var(--ink);">GLP-1</strong> (Wegovy / semaglutide) makes you eat less. Add <strong style="color: var(--ink);">GIP</strong> (Zepbound / tirzepatide) and you eat less <em style="color: var(--ink);">and</em> process food differently — more weight loss (~22.5% vs ~14.9%). Add <strong style="color: var(--ink);">GCG / glucagon</strong> (Innovent\'s Mazdutide) and you also <em style="color: var(--ink);">burn more calories at rest</em> — the world\'s first dual GCG/GLP-1 drug ever approved.</div>';
+  h += '</div>';
+
+  h += '</div>'; // /col 2
+
+  // ===== Column 3: Clinical & FDA =====
+  h += '<div>';
+  h += '<div style="font-family: var(--mono); font-size: 10px; color: var(--ink-soft); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding-bottom: 10px; border-bottom: 1.5px solid var(--ink-soft); margin-bottom: 20px;">Clinical & FDA</div>';
+
+  // PFS vs OS
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">PFS vs OS</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">Two oncology trial endpoints. <strong style="color: var(--ink);">PFS</strong> (Progression-Free Survival) = how long the tumor stops growing. Fast to measure, surrogate. <strong style="color: var(--ink);">OS</strong> (Overall Survival) = how long until the patient dies. Slow but gold-standard. The FDA increasingly demands OS for accelerated approvals — ORIENT-11 was a PFS trial, which is the technical core of why the ODAC vote went the way it did.</div>';
+  h += '</div>';
+
+  // ODAC
+  h += '<div style="margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line);">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">ODAC</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-bottom: 6px;">Oncologic Drugs Advisory Committee</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">An external FDA panel that reviews oncology drug applications and recommends approval or rejection. The Feb 2022 ODAC vote (<strong style="color: var(--ink);">14\u20131 against sintilimab</strong>) is the most-cited regulatory decision involving a Chinese biotech — the moment that re-set the rules for how to bring Chinese-developed drugs to the US.</div>';
+  h += '</div>';
+
+  // Co-Co Structure
+  h += '<div style="margin-bottom: 0;">';
+  h += '<div style="font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;">Co-Co Structure</div>';
+  h += '<div style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-bottom: 6px;">Co-development · Co-commercialization</div>';
+  h += '<div style="font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;">A deal where the licensee shares both R&D burden <em style="color: var(--ink);">and</em> US sales economics with the licensor — not just milestone payments. Rare in China-to-West deals (95%+ are pure license-out). Innovent kept <strong style="color: var(--accent);">40% US profit-share on IBI363</strong> under this structure — the Genentech-style seat at the table that defines the Takeda deal.</div>';
+  h += '</div>';
+
+  h += '</div>'; // /col 3
+  h += '</div>'; // /grid
+
+  // ----- Back-to-episode CTA at the bottom -----
+  h += '<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">';
+  h += '<div style="font-size: 12px; color: var(--ink-faint);">Vocabulary ground covered. Ready for the deep dive?</div>';
+  h += '<a onclick="goToView(\'innovent-deep\')" style="font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; padding: 8px 14px; border: 1px solid var(--accent); border-radius: 3px;">→ Open the full dossier</a>';
+  h += '</div>';
+
+  container.innerHTML = h;
+}
+
 // === Render: Episode 1 Home ===
 function renderEpisodeHome() {
   const container = document.getElementById('view-episode-home');
@@ -4004,6 +4414,14 @@ function renderEpisode1() {
           <div class="companion-card-label">★ Episode dossier</div>
           <h3 class="companion-card-title">Innovent · Full dossier</h3>
           <p class="companion-card-desc">Every approved product, every deal, every funding round since 2011 — with an honest classification of which assets are genuinely innovative and which are fast-followers.</p>
+        </div>
+      </div>
+
+      <div class="companion-grid" style="margin-top: 16px;">
+        <div class="companion-card" onclick="goToView('definitions')" style="grid-column: span 2;">
+          <div class="companion-card-label">Glossary · 12 terms</div>
+          <h3 class="companion-card-title">Definitions</h3>
+          <p class="companion-card-desc">The vocabulary that makes the episode make sense — Class 1 New Drug, HKEX Chapter 18A, NRDL, PD-1 inhibitors, ADCs, bispecifics, the GLP-1 / GIP / GCG class, PFS vs OS, ODAC, Co-Co structures. Skim before you listen, or come back as needed.</p>
         </div>
       </div>
 
@@ -4086,6 +4504,7 @@ renderThemes();
 renderChinaDeals();
 renderChineseChampions();
 renderInnoventDeep();
+renderDefinitions();
 setupFilters();
 setupNav();
 </script>
