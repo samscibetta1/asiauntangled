@@ -1144,6 +1144,309 @@ html, body {
   border-bottom: 1px solid var(--line);
 }
 
+/* ===== Next-gen pharma view ===== */
+#view-next-gen { max-width: 1100px; }
+
+.thesis-box {
+  background: var(--paper-warm);
+  border-left: 3px solid var(--accent);
+  padding: 22px 26px;
+  margin: 24px 0 40px;
+  border-radius: 0 4px 4px 0;
+}
+
+.thesis-box-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.thesis-box p {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.region-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.region-col {
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.region-col-china { border-top: 4px solid var(--accent); }
+.region-col-west { border-top: 4px solid var(--ink-light); }
+
+.region-col-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.region-col-title {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.region-col-count {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.region-col-tagline {
+  font-family: var(--body);
+  font-size: 13px;
+  color: var(--ink-light);
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.ng-company {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.ng-company:last-child { border-bottom: none; }
+
+.ng-company-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ng-company-name {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.ng-company-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.ng-company-stats {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.ng-stat {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-light);
+}
+
+.ng-stat strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ng-company-note {
+  font-family: var(--body);
+  font-size: 12px;
+  color: var(--ink-light);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+.empty-note {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-faint);
+  padding: 16px 0;
+}
+
+.criteria-note {
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin-bottom: 32px;
+  font-family: var(--body);
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.55;
+}
+
+.criteria-note strong { color: var(--ink); }
+
+.ng-timeline-wrap {
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 22px 24px 18px;
+  margin: 28px 0 36px;
+}
+
+.ng-chart-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.ng-chart-subtitle {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.ng-chart-subtitle-aside {
+  font-size: 9px;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ng-chart-callout {
+  display: inline-block;
+  max-width: 460px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--warn);
+  border-radius: 0 4px 4px 0;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.ng-chart-callout-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warn);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.ng-chart-callout-text {
+  font-family: var(--body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.ng-chart-callout-text strong { color: var(--ink); }
+
+.ng-timeline-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ng-timeline-note {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+  font-family: var(--body);
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+.ng-timeline-note strong { color: var(--ink); }
+.ng-timeline-note + .ng-timeline-note { padding-top: 6px; margin-top: 4px; border-top: none; }
+
+/* Breakdown tables */
+.bd-tables {
+  margin: 24px 0 32px;
+}
+
+.bd-table-wrap {
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 16px 20px 6px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.bd-table-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.bd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--body);
+  font-size: 13px;
+}
+
+.bd-table thead th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bd-table tbody td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink);
+}
+
+.bd-table tbody tr:last-child td { border-bottom: none; }
+
+.bd-co { font-family: var(--display); font-size: 14px; }
+
+.bd-china { color: var(--accent); font-weight: 500; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; }
+.bd-west { color: #2a5680; font-weight: 500; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; }
+
+.bd-num { text-align: right; font-family: var(--mono); font-size: 13px; }
+.bd-total { color: var(--ink); font-weight: 600; }
+
+.bd-totalrow td { border-top: 1px solid var(--line); font-family: var(--mono); }
+.bd-totalrow td:first-child { font-family: var(--body); }
+
+@media (max-width: 800px) {
+  .region-compare { grid-template-columns: 1fr; }
+  .ng-timeline-wrap { padding: 16px 12px; }
+}
+
+
 .contextualizers-title {
   font-family: var(--display);
   font-weight: 400;
@@ -1586,6 +1889,9 @@ html, body {
 
     <!-- EPISODE 1 DETAIL -->
     <div class="view" id="view-episode-1"></div>
+
+    <!-- NEXT-GEN PHARMA (post-2010 company energy) -->
+    <div class="view" id="view-next-gen"></div>
 
     <!-- COMPANIES LIST -->
     <div class="view" id="view-companies">
@@ -4430,6 +4736,12 @@ function renderEpisode1() {
       </div>
 
       <div class="companion-grid">
+        <div class="companion-card" onclick="goToView('next-gen')">
+          <div class="companion-card-label">Contextualizer</div>
+          <h3 class="companion-card-title">The new-energy thesis</h3>
+          <p class="companion-card-desc">The most innovative pharma companies founded in the last 20 years — those still independent, with 2+ own-originated approved drugs and 3+ Phase 3 programs. The list is short, and almost all of it is Chinese.</p>
+        </div>
+
         <div class="companion-card" onclick="goToView('chinese-champions')">
           <div class="companion-card-label">Contextualizer</div>
           <h3 class="companion-card-title">The three-way comparison</h3>
@@ -4485,6 +4797,418 @@ function renderEpisode1() {
   `;
 }
 
+// Shared dataset for the timeline + breakdown tables.
+// approved / p3 each split as [innovative_in_house, in_licensed, biosimilar_generic]
+const NG_COMPANIES = [
+  { name: 'BioNTech', flag: '🇩🇪', region: 'West',  year: 2008, approved: [1, 0, 0], p3: [7, 8, 0] },
+  { name: 'Apellis',  flag: '🇺🇸', region: 'West',  year: 2009, approved: [0, 2, 0], p3: [0, 3, 0] },
+  { name: 'Moderna',  flag: '🇺🇸', region: 'West',  year: 2010, approved: [4, 0, 0], p3: [5, 0, 0] },
+  { name: 'BeOne',    flag: '🇨🇳', region: 'China', year: 2010, approved: [3, 0, 0], p3: [14, 1, 0] },
+  { name: 'Innovent', flag: '🇨🇳', region: 'China', year: 2011, approved: [5, 8, 3], p3: [4, 1, 0] },
+  { name: 'Akeso',    flag: '🇨🇳', region: 'China', year: 2012, approved: [7, 0, 0], p3: [13, 0, 0] },
+  { name: 'Junshi',   flag: '🇨🇳', region: 'China', year: 2012, approved: [4, 0, 1], p3: [6, 0, 1] },
+  { name: 'InnoCare', flag: '🇨🇳', region: 'China', year: 2013, approved: [2, 1, 0], p3: [2, 1, 0] },
+  { name: 'Legend',   flag: '🇨🇳', region: 'China', year: 2014, approved: [1, 0, 0], p3: [6, 0, 0] }
+];
+
+function buildTimelineSVG() {
+  const companies = NG_COMPANIES;
+
+  const sumArr = a => a.reduce((s, v) => s + v, 0);
+
+  // Group by year, then within each year put West first (left), China next
+  const yearGroups = {};
+  companies.forEach(c => {
+    if (!yearGroups[c.year]) yearGroups[c.year] = [];
+    yearGroups[c.year].push(c);
+  });
+  Object.values(yearGroups).forEach(g => g.sort((a, b) => {
+    if (a.region !== b.region) return a.region === 'West' ? -1 : 1;
+    return sumArr(b.approved) - sumArr(a.approved);
+  }));
+
+  const years = [2008, 2009, 2010, 2011, 2012, 2013, 2014];
+
+  // Chart geometry
+  const W = 1000, H = 620;
+  const padL = 56, padR = 24, padT = 96, padB = 190;
+  const innerW = W - padL - padR;
+  const innerH = H - padT - padB;
+  const yearW = innerW / years.length;
+
+  const maxVal = 16; // tallest bar is Innovent approved (16)
+  const yMax = 18;   // round up for headroom
+  const yScale = innerH / yMax;
+  const y0 = padT + innerH;
+
+  const compWidth = yearW * 0.42;   // each company group
+  const barWidth = compWidth * 0.42; // each individual bar
+  const barGap = compWidth * 0.06;
+
+  // Bar colors: approved = blue/navy, pipeline = red/accent
+  const colorApproved = '#2a5680';
+  const colorPipeline = '#b34a2f';
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="ng-timeline-svg" role="img" aria-label="Timeline of post-2010 pharma companies by founding year">`;
+
+  // Y-axis gridlines + labels
+  for (let v = 0; v <= yMax; v += 2) {
+    const y = y0 - v * yScale;
+    svg += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#ede5d5" stroke-width="1"/>`;
+    svg += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#8a92a0">${v}</text>`;
+  }
+
+  // Y-axis title
+  svg += `<text x="14" y="${padT + innerH / 2}" font-family="JetBrains Mono, monospace" font-size="10" fill="#8a92a0" letter-spacing="0.1em" transform="rotate(-90, 14, ${padT + innerH / 2})" text-anchor="middle">PRODUCTS</text>`;
+
+  // Bars
+  years.forEach((year, idx) => {
+    const xColCenter = padL + idx * yearW + yearW / 2;
+    const group = yearGroups[year] || [];
+
+    // Year tick + label
+    svg += `<line x1="${xColCenter}" y1="${y0}" x2="${xColCenter}" y2="${y0 + 6}" stroke="#8a92a0" stroke-width="1"/>`;
+    svg += `<text x="${xColCenter}" y="${y0 + 22}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" fill="#555e6e">${year}</text>`;
+
+    // Companies within year, spread horizontally
+    const totalW = group.length * compWidth + (group.length - 1) * 6;
+    let cursor = xColCenter - totalW / 2;
+    group.forEach(c => {
+      const compCenter = cursor + compWidth / 2;
+      // Three sub-category opacities: innovative (full), in-licensed (medium), biosimilar (light)
+      const opacities = [1.0, 0.55, 0.22];
+
+      const drawStackedBar = (x, segments, color) => {
+        let cumY = y0;
+        let totalH = 0;
+        segments.forEach((val, i) => {
+          if (val <= 0) return;
+          const h = val * yScale;
+          svg += `<rect x="${x}" y="${cumY - h}" width="${barWidth}" height="${h}" fill="${color}" opacity="${opacities[i]}" stroke="#faf5ee" stroke-width="0.7"/>`;
+          cumY -= h;
+          totalH += h;
+        });
+        return { topY: y0 - totalH, total: sumArr(segments) };
+      };
+
+      // Approved bar (red)
+      const ax = compCenter - barWidth - barGap / 2;
+      const aRes = drawStackedBar(ax, c.approved, colorApproved);
+      svg += `<text x="${ax + barWidth / 2}" y="${aRes.topY - 4}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="${colorApproved}" font-weight="600">${aRes.total}</text>`;
+
+      // Phase 3 bar (blue)
+      const px = compCenter + barGap / 2;
+      const pRes = drawStackedBar(px, c.p3, colorPipeline);
+      svg += `<text x="${px + barWidth / 2}" y="${pRes.topY - 4}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="${colorPipeline}" font-weight="600">${pRes.total}</text>`;
+
+      // Country flag (centered below the bar pair, larger)
+      svg += `<text x="${compCenter}" y="${y0 + 52}" text-anchor="middle" font-size="24">${c.flag}</text>`;
+
+      // Company name label (under the flag, slightly rotated for fit)
+      svg += `<text x="${compCenter}" y="${y0 + 86}" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#1a2436" font-weight="500" transform="rotate(-30, ${compCenter}, ${y0 + 86})">${c.name}</text>`;
+
+      cursor += compWidth + 6;
+    });
+  });
+
+  // Baseline
+  svg += `<line x1="${padL}" y1="${y0}" x2="${W - padR}" y2="${y0}" stroke="#555e6e" stroke-width="1.5"/>`;
+
+  // === BioNTech callout (inside chart with connecting line) ===
+  const biontech = companies.find(c => c.name === 'BioNTech');
+  if (biontech) {
+    const btYearIdx = years.indexOf(biontech.year);
+    const btColCenter = padL + btYearIdx * yearW + yearW / 2;
+    // BioNTech is only company in 2008 → its compCenter equals the column center
+    const btP3X = btColCenter + barGap / 2 + barWidth / 2;
+    const btP3Top = y0 - sumArr(biontech.p3) * yScale;
+
+    // Callout geometry — narrower, anchored to the left of the chart
+    const cX = 50, cY = 80, cW = 220, cH = 50;
+    const warnColor = '#b8860b';
+    const anchorX = cX + 26;
+    const anchorY = cY + cH;
+
+    // Connecting line + endpoint dot at the bar
+    svg += `<line x1="${anchorX}" y1="${anchorY}" x2="${btP3X}" y2="${btP3Top}" stroke="${warnColor}" stroke-width="1.2" stroke-dasharray="3,3"/>`;
+    svg += `<circle cx="${btP3X}" cy="${btP3Top}" r="3" fill="${warnColor}"/>`;
+    svg += `<circle cx="${anchorX}" cy="${anchorY}" r="2" fill="${warnColor}"/>`;
+
+    // Callout background + accent stripe on left
+    svg += `<rect x="${cX}" y="${cY}" width="${cW}" height="${cH}" fill="#faf5ee" stroke="${warnColor}" stroke-width="1" rx="3"/>`;
+    svg += `<rect x="${cX}" y="${cY}" width="3" height="${cH}" fill="${warnColor}"/>`;
+
+    // Callout text
+    svg += `<text x="${cX + 12}" y="${cY + 16}" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" fill="${warnColor}" letter-spacing="0.14em">HONORABLE MENTION</text>`;
+    svg += `<text x="${cX + 12}" y="${cY + 34}" font-family="Inter, sans-serif" font-size="11" fill="#1a2436"><tspan font-weight="600">BioNTech</tspan> · 15 Phase 3 programs</text>`;
+  }
+
+  // X-axis title
+  const xAxisTitleY = y0 + padB - 18;
+  svg += `<text x="${padL + innerW / 2}" y="${xAxisTitleY}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#8a92a0" letter-spacing="0.14em">YEAR FOUNDED</text>`;
+
+  // Legend (top-right)
+  const lgX = W - padR - 360;
+  const lgY = padT - 60;
+  svg += `<g font-family="JetBrains Mono, monospace" font-size="11" fill="#1a2436">`;
+  // Bar type swatches (red = approved, blue = pipeline)
+  svg += `<rect x="${lgX}" y="${lgY}" width="14" height="14" fill="${colorApproved}"/>`;
+  svg += `<text x="${lgX + 20}" y="${lgY + 11}">Approved</text>`;
+  svg += `<rect x="${lgX}" y="${lgY + 22}" width="14" height="14" fill="${colorPipeline}"/>`;
+  svg += `<text x="${lgX + 20}" y="${lgY + 33}">Phase 3 / pivotal</text>`;
+  // Sub-category opacities (using one of the colors to demonstrate)
+  svg += `<rect x="${lgX + 140}" y="${lgY}" width="14" height="14" fill="${colorApproved}" opacity="1.0"/>`;
+  svg += `<text x="${lgX + 160}" y="${lgY + 11}">Innovative (in-house)</text>`;
+  svg += `<rect x="${lgX + 140}" y="${lgY + 22}" width="14" height="14" fill="${colorApproved}" opacity="0.55"/>`;
+  svg += `<text x="${lgX + 160}" y="${lgY + 33}">In-licensed</text>`;
+  svg += `<rect x="${lgX + 140}" y="${lgY + 44}" width="14" height="14" fill="${colorApproved}" opacity="0.22"/>`;
+  svg += `<text x="${lgX + 160}" y="${lgY + 55}">Biosimilar / generic</text>`;
+  svg += `</g>`;
+
+  svg += `</svg>`;
+
+  return `
+    <div class="ng-timeline-wrap">
+      <h2 class="ng-chart-title">The most innovative pharma companies founded in the last 20 years</h2>
+      <div class="ng-chart-subtitle">Founded since 2006 without acquisition · 2+ innovative approved products · 3+ in Phase 3 or pivotal trials</div>
+      ${svg}
+      <div class="ng-timeline-note">
+        <strong>Blue bars</strong> = approved products &nbsp;·&nbsp; <strong>red bars</strong> = Phase 3 / pivotal programs. Each bar is stacked by source: solid = innovative (in-house), medium = in-licensed, lightest = biosimilar / generic. Country flag below each pair.
+      </div>
+      <div class="ng-timeline-note">
+        <strong>Hengrui</strong> (founded 1970) is omitted from the chart — its scale (24 approved · 100+ in clinical) would compress everything else and it predates the 2010 frame. It is included in the columns below as the pre-window honorable mention.
+      </div>
+    </div>
+  `;
+}
+
+function buildBreakdownTables() {
+  const sumArr = a => a.reduce((s, v) => s + v, 0);
+  const fmt = v => v === 0 ? '0' : (v >= 5 && (v === 7 || v === 8 || v === 11 || v === 14 || v === 27 || v === 57) ? '~' + v : String(v));
+
+  const totals = {
+    approved: [0, 0, 0],
+    p3: [0, 0, 0]
+  };
+  NG_COMPANIES.forEach(c => {
+    c.approved.forEach((v, i) => { totals.approved[i] += v; });
+    c.p3.forEach((v, i) => { totals.p3[i] += v; });
+  });
+  const approvedTotal = sumArr(totals.approved);
+  const p3Total = sumArr(totals.p3);
+
+  const row = (c, key) => {
+    const seg = c[key];
+    return `
+      <tr>
+        <td class="bd-co">${c.name}${c.name === 'BeOne' ? ' (BeiGene)' : ''}</td>
+        <td class="${c.region === 'China' ? 'bd-china' : 'bd-west'}">${c.region}</td>
+        <td class="bd-num bd-total">${sumArr(seg)}</td>
+        <td class="bd-num">${seg[0]}</td>
+        <td class="bd-num">${seg[1]}</td>
+        <td class="bd-num">${seg[2]}</td>
+      </tr>
+    `;
+  };
+
+  const totalRow = (key) => {
+    const t = totals[key];
+    const grand = sumArr(t);
+    return `
+      <tr class="bd-totalrow">
+        <td><strong>Total</strong></td>
+        <td></td>
+        <td class="bd-num"><strong>${grand}</strong></td>
+        <td class="bd-num"><strong>~${t[0]}</strong></td>
+        <td class="bd-num"><strong>~${t[1]}</strong></td>
+        <td class="bd-num"><strong>~${t[2]}</strong></td>
+      </tr>
+    `;
+  };
+
+  const buildTable = (title, key) => `
+    <div class="bd-table-wrap">
+      <div class="bd-table-title">${title}</div>
+      <table class="bd-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Region</th>
+            <th class="bd-num">Total</th>
+            <th class="bd-num">Innovative (in-house)</th>
+            <th class="bd-num">In-licensed</th>
+            <th class="bd-num">Biosimilar / generic</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${NG_COMPANIES.map(c => row(c, key)).join('')}
+          ${totalRow(key)}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  return `
+    <div class="bd-tables">
+      ${buildTable('Approved products', 'approved')}
+      ${buildTable('Phase 3 / pivotal programs', 'p3')}
+      <div class="criteria-note" style="margin-top: 18px;">
+        <strong>What this shows.</strong> Of <strong>${approvedTotal}</strong> total approved products across the nine post-2010 companies, ~${totals.approved[0]} are innovative in-house, ~${totals.approved[1]} are in-licensed, ~${totals.approved[2]} are biosimilars or generics. Of <strong>${p3Total}</strong> total Phase 3 / pivotal programs, ~${totals.p3[0]} are own-originated. Innovent's high "approved" count is partially inflated by in-licensed and biosimilar products; its Phase 3 pipeline is more clearly innovative. BeOne, Akeso, Moderna, and Legend are essentially all-innovative across both columns.
+      </div>
+    </div>
+  `;
+}
+
+function renderNextGen() {
+  const container = document.getElementById('view-next-gen');
+  if (!container) return;
+
+  // Hand-curated from public record (company filings, FDA/NMPA approvals, May 2026).
+  // Threshold: founded >= 2010, 3+ approved products, 5+ programs in or through Phase 3 / pivotal.
+  const china = [
+    {
+      name: 'Innovent Biologics',
+      meta: 'Founded 2011 · Suzhou',
+      approved: '16',
+      p3: '5',
+      note: 'Sintilimab (Tyvyt), mazdutide for obesity, plus IBI363 (PD-1/IL-2α), IBI354 (HER2 ADC), IBI343 (CLDN18.2 ADC), and IBI3003 (GPRC5D/BCMA/CD3 trispecific) all in pivotal trials. The episode subject.'
+    },
+    {
+      name: 'Akeso',
+      meta: 'Founded 2012 · Zhongshan',
+      approved: '7',
+      p3: '13',
+      note: 'Cadonilimab (first PD-1/CTLA-4 bispecific approved anywhere) and ivonescimab (PD-1/VEGF — beat Keytruda head-to-head in HARMONi-2). 27 clinical-stage candidates.'
+    },
+    {
+      name: 'Junshi Biosciences',
+      meta: 'Founded 2012 · Shanghai',
+      approved: '5',
+      p3: '~7',
+      note: 'Toripalimab (Loqtorzi — first Chinese PD-1 with FDA approval, 40+ countries). Pipeline of 50+ candidates across oncology, autoimmune, metabolic.'
+    },
+    {
+      name: 'BeOne Medicines (formerly BeiGene)',
+      meta: 'Founded 2010 · Beijing / Basel',
+      approved: '3',
+      p3: '15+',
+      note: 'Brukinsa (zanubrutinib, $1.3B+ in sales, approved in 75 markets), Tevimbra (tislelizumab), Baiyueda (sotoclax, FDA-approved May 2026). Broadest late-stage hem-onc pipeline of any post-2010 biotech anywhere.'
+    },
+    {
+      name: 'InnoCare Pharma',
+      meta: 'Founded 2013 · Beijing',
+      approved: '3',
+      p3: '3',
+      note: 'Orelabrutinib (BTK inhibitor, approved in CLL/SLL, MCL, MZL), tafasitamab, zurletrectinib. Phase 3 programs for orelabrutinib in SLE, primary progressive MS, secondary progressive MS.'
+    }
+  ];
+
+  const chinaBorderline = [
+    {
+      name: 'Legend Biotech',
+      meta: 'Founded 2014 · Nanjing / Somerset NJ',
+      approved: '1',
+      p3: '6+',
+      note: 'Carvykti (cilta-cel) with J&J — the best-in-class BCMA CAR-T. CARTITUDE-6 enrollment completed Aug 2025, plus multiple in vivo cell therapy programs entering the clinic. Misses on approved count; striking late-stage depth for a single-product company.'
+    }
+  ];
+
+  const west = [
+    {
+      name: 'Moderna',
+      meta: 'Founded 2010 · Cambridge MA',
+      approved: '4',
+      p3: '~5',
+      note: 'Spikevax + mNEXSPIKE (COVID), mRESVIA (RSV), mCOMBRIAX (flu/COVID combo, EU). Phase 3 readouts in 2026 for norovirus, flu, and intismeran (with Merck) across melanoma/NSCLC/bladder/RCC. The clearest Western case at the 3+ bar.'
+    }
+  ];
+
+  const chinaPreWindow = [
+    {
+      name: 'Jiangsu Hengrui Pharmaceuticals',
+      meta: 'Founded 1970 · Lianyungang',
+      approved: '24 Class 1 innovative',
+      p3: '100+ in clinical',
+      note: 'Outside the post-2010 window — but worth seeing. Hengrui has 24 Class 1 innovative drugs approved, 100+ innovative candidates in clinical development, and 400+ ongoing trials. The pre-existing Chinese player dwarfs every post-2010 Western biotech on innovation output.'
+    }
+  ];
+
+  const westPreWindow = [
+    {
+      name: 'BioNTech',
+      meta: 'Founded 2008 · Mainz',
+      approved: '1',
+      p3: '15',
+      note: 'Comirnaty with Pfizer; deep oncology pipeline but still only one approved product. 15 Phase 3 cancer trials expected by end of 2026. Falls short of the 2+ innovative approved bar.'
+    },
+    {
+      name: 'Apellis Pharmaceuticals',
+      meta: 'Founded 2009 · Waltham MA',
+      approved: '2',
+      p3: '2–3',
+      note: 'Syfovre (geographic atrophy), Empaveli/Aspaveli (PNH) — both in-licensed rather than own-originated, so the company has zero innovative approvals in this strict sense.'
+    }
+  ];
+
+  const renderRow = (c, badge) => `
+    <div class="ng-company">
+      <div class="ng-company-row">
+        <div class="ng-company-name">${c.name}${badge ? ` <span style="font-family:var(--mono);font-size:10px;color:var(--warn);font-weight:600;">· ${badge}</span>` : ''}</div>
+        <div class="ng-company-meta">${c.meta}</div>
+      </div>
+      <div class="ng-company-stats">
+        <div class="ng-stat"><strong>${c.approved}</strong> approved</div>
+        <div class="ng-stat"><strong>${c.p3}</strong> Phase 3 / pivotal</div>
+      </div>
+      <div class="ng-company-note">${c.note}</div>
+    </div>
+  `;
+
+  container.innerHTML = `
+    <header class="page-header">
+      <p class="page-desc">A simple test of where new innovation is actually being scaled. Among pharma companies founded since 2006 (without being acquired by big pharma), which ones have crossed the threshold of <strong>2+ innovative (own-originated) approved products</strong> and <strong>3+ programs in Phase 3 or pivotal trials</strong>? The list is short. Nearly all of it is Chinese.</p>
+    </header>
+
+    <div class="criteria-note">
+      <strong>Criteria.</strong> Founded in 2006 or later, still independent (not acquired). <strong>2 or more <em>innovative</em> approved products</strong> — own-originated in-house, not in-licensed, not biosimilars or generics. <strong>3 or more programs currently in Phase 3 or pivotal trials</strong> as of May 2026. Figures from company filings, FDA/NMPA approval records, and earnings disclosures. Companies bought out by big pharma (SpringWorks, Karuna, Mirati) don't count.
+    </div>
+
+    ${buildTimelineSVG()}
+
+    ${buildBreakdownTables()}
+
+    <div class="region-compare">
+      <div class="region-col region-col-china">
+        <div class="region-col-header">
+          <div class="region-col-title">China</div>
+          <div class="region-col-count">${china.length} clean · ${chinaBorderline.length} borderline</div>
+        </div>
+        <div class="region-col-tagline">Multi-product companies that grew up entirely in the last 20 years.</div>
+        ${china.map(c => renderRow(c)).join('')}
+        ${chinaBorderline.map(c => renderRow(c, 'borderline')).join('')}
+        <div class="empty-note">Honorable mention, predates the 2006 cutoff but defines the broader pattern:</div>
+        ${chinaPreWindow.map(c => renderRow(c, 'pre-window')).join('')}
+      </div>
+
+      <div class="region-col region-col-west">
+        <div class="region-col-header">
+          <div class="region-col-title">West (US + Europe)</div>
+          <div class="region-col-count">${west.length} clean · 0 borderline</div>
+        </div>
+        <div class="region-col-tagline">Plenty of biotech IPOs in the last 20 years. Only one has crossed the threshold.</div>
+        ${west.map(c => renderRow(c)).join('')}
+        <div class="empty-note">Honorable mentions — within the window but fall short of 2+ innovative approved:</div>
+        ${westPreWindow.map(c => renderRow(c, 'in window · short on approved')).join('')}
+        <div class="empty-note">Other notable Western biotechs founded in the window — CRISPR Therapeutics (2013), Beam (2017), Intellia (2014), Verve (2018), Krystal Biotech (2016), Vor (2015), and gene-editing platforms more broadly — typically have 0–1 approved products and 0–2 Phase 3 programs each. They are real innovators, but have not scaled into multi-product companies.</div>
+      </div>
+    </div>
+
+    <div class="criteria-note">
+      <strong>Why this might be wrong.</strong> The criteria penalize platform-first biotechs (CRISPR/gene editing) whose Phase 3 readouts will come in 2027–2030, and reward Chinese companies that have benefited from a faster and lower-cost domestic regulatory pathway. They also favor fast-follower antibody strategies over harder-to-replicate single-product wins like Carvykti (Legend) or Casgevy (Vertex/CRISPR). And the 20-year cutoff explicitly excludes Hengrui — a 55-year-old company that arguably represents the strongest case of all, with 24 Class 1 innovative drugs approved and 100+ candidates in the clinic. A 2030 version of this chart could look quite different. But for the question of <em>which companies founded in the last 20 years have already scaled into multi-product, multi-late-stage franchises</em>, the asymmetry is what it is.
+    </div>
+  `;
+}
+
 function goToView(v) {
   state.view = v;
   switchView();
@@ -4496,6 +5220,7 @@ window.goToView = goToView;
 renderCounts();
 renderEpisodeHome();
 renderEpisode1();
+renderNextGen();
 renderCompanies();
 renderLOE();
 renderModalities();
