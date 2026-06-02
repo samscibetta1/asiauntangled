@@ -1117,6 +1117,17 @@ html, body {
   color: var(--accent);
 }
 
+.companion-card-ext {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  color: var(--accent);
+  margin-left: 8px;
+  font-weight: 500;
+  font-style: italic;
+}
+
 .companion-card-title {
   font-family: var(--display);
   font-weight: 400;
@@ -4740,6 +4751,18 @@ function renderEpisode1() {
           <div class="companion-card-label">Contextualizer</div>
           <h3 class="companion-card-title">The new-energy thesis</h3>
           <p class="companion-card-desc">The most innovative pharma companies founded in the last 20 years — those still independent, with 2+ own-originated approved drugs and 3+ Phase 3 programs. The list is short, and almost all of it is Chinese.</p>
+        </div>
+
+        <div class="companion-card" onclick="window.open('china_deals_10B.html', '_blank')">
+          <div class="companion-card-label">Contextualizer <span class="companion-card-ext">↗ opens in new tab</span></div>
+          <h3 class="companion-card-title">$10B+ China deals · benchmarked per product</h3>
+          <p class="companion-card-desc">Four China-originated deals cleared the $10B threshold in 2025–2026. Headline totals make them look comparable — they aren't. Per-product economics show Innovent–Takeda pays multiples more for each asset than any peer, and the assets are later-stage to boot.</p>
+        </div>
+
+        <div class="companion-card" onclick="window.open('china_directional_flip.html', '_blank')">
+          <div class="companion-card-label">Contextualizer <span class="companion-card-ext">↗ opens in new tab</span></div>
+          <h3 class="companion-card-title">The flip · China's licensing reversal</h3>
+          <p class="companion-card-desc">For two decades China imported pharma innovation. In 2023 the arrow reversed: license-OUT crossed license-IN. By 2025, outbound deals hit $135.7B — nearly 10× the 2021 level. The macro context that makes Innovent–Takeda a headline of the post-flip era.</p>
         </div>
 
         <div class="companion-card" onclick="goToView('chinese-champions')">
